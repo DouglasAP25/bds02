@@ -1,58 +1,66 @@
 package com.devsuperior.bds02.controllers.exceptions;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.Instant;
 
 public class StandardError implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Long id;
-	private String name;
-	private LocalDate date;
-	private String url;
+	private Instant timestamp;
+	private Integer status;
+	private String error;
+	private String message;
+	private String path;
 
 	public StandardError() {		
 	}
 
-	public StandardError(Long id, String name, LocalDate date, String url) {
+	public StandardError(Instant timestamp, Integer status, String error, String message, String path) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.date = date;
-		this.url = url;
+		this.timestamp = timestamp;
+		this.status = status;
+		this.error = error;
+		this.message = message;
+		this.path = path;
 	}
 
-	public Long getId() {
-		return id;
+	public Instant getTimestamp() {
+		return timestamp;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setTimestamp(Instant timestamp) {
+		this.timestamp = timestamp;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getStatus() {
+		return status;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public String getError() {
+		return error;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setError(String error) {
+		this.error = error;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setMessage(String message) {
+		this.message = message;
 	}
-	
-	
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
 }
